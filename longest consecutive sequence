@@ -1,0 +1,13 @@
+class Solution(object):
+    def longestConsecutive(self, nums):
+
+        s = set(nums)
+        temp = 0
+        for i in s:
+            if i-1 not in s:
+                l = 0
+                while  i+l in s:
+                    l+=1
+                temp = max(temp,l)    
+
+        return temp  
